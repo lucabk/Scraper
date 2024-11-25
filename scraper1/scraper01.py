@@ -26,3 +26,8 @@ for book in books:
         # extract title attribute and print it
         title = a_tag.attributes.get('title')
         print('Title:', title)
+
+    # book's price: <p class="price_color">£51.77</p>
+    price_tag = book.css_first('p.price_color')
+    if price_tag:
+        print('price:', price_tag.text())
