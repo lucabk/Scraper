@@ -18,16 +18,21 @@ html = HTMLParser(response.text)  # to print the first CSS selector specified:  
 books = html.css('ol.row li') # <ol class="row"> contains a list <li> of items
 print('all books:', books) # print the list of books: [<Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>, <Node li>]
 
-#loop through each book
+# list of dictionaries for saving data
+books_title_and_price = []
+
 for book in books:
     # book's title: <h3><a href="catalogue/a-light-in-the-attic_1000/index.html" title="A Light in the Attic">A Light in the ...</a></h3>
     a_tag = book.css_first('h3 a')  # find the <h3><a> element
-    if a_tag:
-        # extract title attribute and print it
-        title = a_tag.attributes.get('title')
-        print('Title:', title)
-
+    
     # book's price: <p class="price_color">£51.77</p>
     price_tag = book.css_first('p.price_color')
-    if price_tag:
-        print('price:', price_tag.text())
+
+    if a_tag and price_tag:
+        # extract title attribute and price
+        title = a_tag.attributes.get('title')
+        price = price_tag.text()
+        # push to list
+        books_title_and_price.append({ 'title':title, 'price':price})
+    
+print(books_title_and_price)
