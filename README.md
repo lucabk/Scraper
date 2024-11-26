@@ -83,4 +83,18 @@ ed interagire con i risultati. Ad esempio, per recuperare il titolo:
 'In Her Wake'
 >>> 
 ```
-Questo selettore può essere successivamente utilizzato nel parser. Per semplicità, come nello scraper01 verranno recuperati unicamente titolo e prezzo di ogni libro, ma questa volta con la differenza di accedere ad ogni link specifico per libro, scorrendo tutte le pagine.
+Questo selettore può essere successivamente utilizzato nel parser. Per semplicità, come nello scraper01 verranno recuperati unicamente titolo e prezzo di ogni libro, ma questa volta con la differenza di accedere ad ogni link specifico per libro, scorrendo tutte le pagine. 
+
+Si farà uso anche degli Scrapy Items, utili per definire la struttura dei dati estratti. Questo permette di manipolare e pulire i dati raccolti in modo più effeciente. Quindi, si apre il file "items.py" e si va a definire lo schema dei dati estratti; nel caso d'esempio: titolo e prezzo del libro.
+```python
+import scrapy
+class BookItem(scrapy.Item):
+    title = scrapy.Field()  
+    price = scrapy.Field() 
+```
+L'item poi verrà importato nello spider per essere popolato tramite l'<a href="https://docs.scrapy.org/en/latest/topics/loaders.html">item loaders</a>. Nel file "items.py" gli item possono essere <a href="https://docs.scrapy.org/en/latest/topics/loaders.html#declaring-input-and-output-processors">manipolati</a>.
+
+Per visualizzare il risultato in un file JSON eseguire il comando:
+```bash
+scrapy crawl books -o books.json
+```

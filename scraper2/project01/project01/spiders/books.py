@@ -1,6 +1,8 @@
 import scrapy
 from scrapy.spiders import CrawlSpider, Rule
 from scrapy.linkextractors import LinkExtractor
+from ..items import BookItem    
+from scrapy.loader import ItemLoader
 
 class BooksSpider(CrawlSpider):
     name = "books"
@@ -18,7 +20,9 @@ class BooksSpider(CrawlSpider):
     )
 
     def parse_book(self, response):
-        yield {
-            "title" : response.css("h1::text").get(),
-            "price" : response.css("p.price_color::text").get()
-        }
+        # create an ItemLoader instance for the BookItem class populated with response from the parser
+        l = ItemLoader(item=BookItem(), response=response) 
+        l.add_css("title", "h1")
+        l.add_css("price", "p.price_color")
+        
+        return l.load_item()

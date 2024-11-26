@@ -4,9 +4,15 @@
 # https://docs.scrapy.org/en/latest/topics/items.html
 
 import scrapy
+from itemloaders.processors import Join, MapCompose, TakeFirst
+from w3lib.html import remove_tags
 
-
-class Project01Item(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class BookItem(scrapy.Item):
+    title = scrapy.Field(
+        input_processor=MapCompose(remove_tags),
+        output_processor=TakeFirst(),
+    )  
+    price = scrapy.Field(
+        input_processor=MapCompose(remove_tags),
+        output_processor=TakeFirst(),
+    ) 
