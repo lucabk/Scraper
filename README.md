@@ -17,6 +17,14 @@ source scraper_env/bin/activate
 ```
 Per installare le dipendenze si utilizza il comando: ``` pip install -r requirements.txt ```. Per aggiornare il file dei requisiti: ``` pip freeze > requirements.txt ```
 
+L'editor di sviluppo utilizzato è VSCode su WSL; inoltre, si è installata l'estensione "Python" e il motore di completamento di codice Jedi dalle impostazioni "settings.json" di VSCode:
+```json
+{
+  "python.languageServer": "Jedi"
+}
+```
+
+
  ## 1. Applicazioni Web Statiche
  ### 1.1 - Un primo esempio di Scraping
  Nella cartella "/scraper1" è contenuto il primo esempio di scraper in Python. Il sito di riferimento è il seguente: https://books.toscrape.com/. In questo primo progetto si farà uso delle librerie <a href="https://www.python-httpx.org/">httpx</a> e <a href="https://github.com/rushter/selectolax">selectolax'</a>; la prima è una alternativa alla classica libreria <a href="https://pypi.org/project/requests/">requests</a>, la seconda un'alternativa a <a href="https://pypi.org/project/beautifulsoup4/">beautifulsoup</a> per il parsing delle risposte HTML, ma permette unicamente di catturare i selettori CSS. Queste due scelte sono state utilizzate per garantire un approccio più moderno al web scraping.
