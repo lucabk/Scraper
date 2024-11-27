@@ -23,13 +23,31 @@ L'editor di sviluppo utilizzato è VSCode su WSL; inoltre, si è installata l'es
   "python.languageServer": "Jedi"
 }
 ```
+Come strumento di linting per aiuto allo sviluppo si fa uso di Pylint:
+```bash
+pip install pylint
+```
+Di conseguenza si modifica il già citato file di impostazioni:
+```json
+{
+  "python.languageServer": "Jedi",
+  "python.linting.pylintEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.lintOnSave": true
+}
+```
+Si genera un file ".pylintrc":
+```bash
+pylint --generate-rcfile > .pylintrc
+```
+All'interno del file ci sono le regole da utilizzare.
 
 
- ## 1. Applicazioni Web Statiche
- ### 1.1 - Un primo esempio di Scraping
- Nella cartella  ```/scraper1 ``` è contenuto il primo esempio di scraper in Python. Il sito di riferimento è il seguente: https://books.toscrape.com/. In questo primo progetto si farà uso delle librerie <a href="https://www.python-httpx.org/">httpx</a> e <a href="https://github.com/rushter/selectolax">selectolax</a>; la prima è una alternativa alla classica libreria <a href="https://pypi.org/project/requests/">requests</a>, la seconda un'alternativa a <a href="https://pypi.org/project/beautifulsoup4/">beautifulsoup</a> per il parsing delle risposte HTML, ma permette unicamente di catturare i selettori CSS. Queste due scelte sono state utilizzate per garantire un approccio più moderno al web scraping.
+## 1. Applicazioni Web Statiche
+### 1.1 - Un primo esempio di Scraping
+Nella cartella  ```/scraper1 ``` è contenuto il primo esempio di scraper in Python. Il sito di riferimento è il seguente: https://books.toscrape.com/. In questo primo progetto si farà uso delle librerie <a href="https://www.python-httpx.org/">httpx</a> e <a href="https://github.com/rushter/selectolax">selectolax</a>; la prima è una alternativa alla classica libreria <a href="https://pypi.org/project/requests/">requests</a>, la seconda un'alternativa a <a href="https://pypi.org/project/beautifulsoup4/">beautifulsoup</a> per il parsing delle risposte HTML, ma permette unicamente di catturare i selettori CSS. Queste due scelte sono state utilizzate per garantire un approccio più moderno al web scraping.
 
-### 1.2 - Scrapy
+### 1.2 - Introduzione a Scrapy
 Un approccio migliore è quello di utilizzare <a href="https://docs.scrapy.org/en/latest/index.html">Scrapy</a>, un framework per lo scraping in Python. Si installa prima Scrapy:
 ```bash
 pip install scrapy
@@ -98,3 +116,22 @@ Per visualizzare il risultato in un file JSON eseguire il comando:
 ```bash
 scrapy crawl books -o books.json
 ```
+Un estratto del risultato è riportato di seguito:
+```python
+[
+{"title": "The Coming Woman: A Novel Based on the Life of the Infamous Feminist, Victoria Woodhull", "price": "£17.93"},
+{"title": "The Boys in the Boat: Nine Americans and Their Epic Quest for Gold at the 1936 Berlin Olympics", "price": "£22.60"},
+{"title": "Soumission", "price": "£50.10"},
+{"title": "Tipping the Velvet", "price": "£53.74"},
+{"title": "The Dirty Little Secrets of Getting Your Dream Job", "price": "£33.34"},
+{"title": "Sharp Objects", "price": "£47.82"},
+{"title": "Sapiens: A Brief History of Humankind", "price": "£54.23"},
+...
+]
+```
+
+#### Riferimenti: 
+Web scraping YT: https://www.youtube.com/playlist?list=PLRzwgpycm-FiTz9bGQoITAzFEOJkbF6Qp
+
+
+### 1.3 
