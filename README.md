@@ -188,7 +188,7 @@ pip install selenium
 ```
 Il file verrà caricato direttamente dall'interfaccia grafica di Github, senza passa per git. Ricordarsi di fare il ```pip freeze > requirements.txt```.
 
-Inoltre, Selenium avrà bisogno del webdriver, in modo tale da permettere il controllo del browser da parte del pacchetto Python Selenium:
+Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs.io/api.html">webdriver</a>, in modo tale da permettere il controllo del browser da parte del pacchetto Python Selenium:
 ```bash
 pip install webdriver-manager
 ```
