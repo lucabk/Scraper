@@ -45,7 +45,7 @@ pylint --generate-rcfile > .pylintrc
 All'interno del file ci sono le regole da utilizzare.
 
 ### 1.2 Jupyter Notebook
-Jupyter Notebook è un'applicazione web open source che consente di creare e condividere documenti che contengono codice live, equazioni, visualizzazioni e testo narrativo. Si deve quindi dapprima <a href="https://jupyter.org/install">installare Notebook</a>, comprensivo del kernel in modo tale da lavorare su un ambiente virtuale Python dedicato, al fine di evitare conflitti e di avere una gestione più pulita dei pacchetti installati. Questa parte di sviluppo verrà realizzata su sistema Windows. 
+Jupyter Notebook è un'applicazione web open source che consente di creare e condividere documenti che contengono codice live, equazioni, visualizzazioni e testo narrativo. Si deve quindi dapprima <a href="https://jupyter.org/install">installare Notebook</a>, comprensivo del kernel in modo tale da lavorare su un ambiente virtuale Python dedicato, al fine di evitare conflitti e di avere una gestione più pulita dei pacchetti installati. Questa parte di sviluppo verrà realizzata su sistema Windows e si consiglia di utilizzare ```cmd``` per i seguenti comandi invece di  ```PowerShell```, perché potrebbe applicare delle restrizioni.
 
 Per prima cosa si crea l'ambiente virtuale; bisogna verificare prima che Python3 e pip3 siano correttamente installati:
 ```bash
