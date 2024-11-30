@@ -56,9 +56,12 @@ C:\Users\luca>pip --version
 pip 24.2 
 ```
 
-Quindi si <a href="https://docs.python.org/3/library/venv.html">crea</a> l'ambiente virtuale e lo si attiva:
+Quindi si <a href="https://docs.python.org/3/library/venv.html">crea</a> l'ambiente virtuale:
 ```bash
 python -m venv jupynote
+```
+e lo si attiva:
+```bash
 jupynote\Scripts\activate
 ```
 
