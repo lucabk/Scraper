@@ -77,6 +77,10 @@ jupyter notebook
 Si aprirà una pagina web con cui dialogare con il Notebook che gira, di default, sulla porta 8888. Ora si può creare un nuovo notebook selezionando il kernel appena creato: ```kernel>change kernel```:
 ![image](https://github.com/user-attachments/assets/74eec0d1-cc7d-4d26-b8d8-03ae5ec0b6dd)
 
+Per disattivare l'ambiente virtuale, come in Linux, si esegue da terminale:
+```bash
+deactivate
+```
 
 ## 2. Applicazioni Web Statiche
 ### 2.1 - Un primo esempio di Scraping
