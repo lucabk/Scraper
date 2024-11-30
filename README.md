@@ -83,10 +83,10 @@ deactivate
 ```
 
 ## 2. Applicazioni Web Statiche
-### 2.1 - Un primo esempio di Scraping
+### 2.1 - Un primo esempio di Scraping: ```scraper1```
 Nella cartella  ```/scraper1 ``` è contenuto il primo esempio di scraper in Python. Il sito di riferimento è il seguente: https://books.toscrape.com/. In questo primo progetto si farà uso delle librerie <a href="https://www.python-httpx.org/">httpx</a> e <a href="https://github.com/rushter/selectolax">selectolax</a>; la prima è una alternativa alla classica libreria <a href="https://pypi.org/project/requests/">requests</a>, la seconda un'alternativa a <a href="https://pypi.org/project/beautifulsoup4/">beautifulsoup</a> per il parsing delle risposte HTML, ma permette unicamente di catturare i selettori CSS. Queste due scelte sono state utilizzate per garantire un approccio più moderno al web scraping.
 
-### 2.2 - Introduzione a Scrapy
+### 2.2 - Introduzione a Scrapy: ```scraper2```
 Un approccio migliore è quello di utilizzare <a href="https://docs.scrapy.org/en/latest/index.html">Scrapy</a>, un framework per lo scraping in Python. Si installa prima Scrapy:
 ```bash
 pip install scrapy
@@ -177,7 +177,7 @@ Web scraping YT: https://www.youtube.com/playlist?list=PLRzwgpycm-FiTz9bGQoITAzF
 
 
 ## 3. Applicazioni Web Dinamiche
-### 3.1 Selenium
+### 3.1 Selenium: ```scraper3```
 In questa sezione si utilizzerà <a href="https://www.selenium.dev/documentation/">Selenium</a> come primo esempioi di scraping dinamico su <a href="https://www.threads.net/?hl=en">Threads</a>. In questa
 sezione  si farà uso di Jupyter Notebook per lo sviluppo. Si faccia riferimento ai capitoli precedenti per le impostazioni generali. all'interno dell'ambiente virtuale creato in precedenza si può <a href="https://pypi.org/project/selenium/">installre selenium</a>:
 ```bash
