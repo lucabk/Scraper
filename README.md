@@ -1,6 +1,8 @@
 # Scraper
 
-Il progetto è realizzato su sistema WSL. Per le configurazioni si faccia riferimento alla seguente <a href="https://github.com/lucabk/Progetto-Programmazione-Avanzata?tab=readme-ov-file#11-wsl">repository</a>. Il linguaggio di programmazione di riferimento utilizzato è Python. L'idea è quella di implementare Scraper dai più semplici, su siti statici, fino alla realizzazione di uno scraper per l'app Threads. Il progetto è diviso in cartelle. 
+## 1 Ambienti di Sviluppo
+### 1.1 WSL
+Il progetto è realizzato, in parte, su sistema WSL. Per le configurazioni si faccia riferimento alla seguente <a href="https://github.com/lucabk/Progetto-Programmazione-Avanzata?tab=readme-ov-file#11-wsl">repository</a>. Il linguaggio di programmazione di riferimento utilizzato è Python. L'idea è quella di implementare Scraper dai più semplici, su siti statici, fino alla realizzazione di uno scraper per l'app Threads. Il progetto è diviso in cartelle. 
 
 E' necessaria l'installazione di Python3, pip3 e dell'ambiente virtuale. Si può far riferimento alla seguente <a href="https://learn.microsoft.com/it-it/windows/python/web-frameworks#install-python-pip-and-venv">guida</a>. Ubuntu su WSL dovrebbe avere Python già installato. I comandi da lanciare sono:
 ```bash
@@ -42,12 +44,45 @@ pylint --generate-rcfile > .pylintrc
 ```
 All'interno del file ci sono le regole da utilizzare.
 
+### 1.2 Jupyter Notebook
+Jupyter Notebook è un'applicazione web open source che consente di creare e condividere documenti che contengono codice live, equazioni, visualizzazioni e testo narrativo. Si deve quindi dapprima <a href="https://jupyter.org/install">installare Notebook</a>, comprensivo del kernel in modo tale da lavorare su un ambiente virtuale Python dedicato, al fine di evitare conflitti e di avere una gestione più pulita dei pacchetti installati. Questa parte di sviluppo verrà realizzata su sistema Windows. 
 
-## 1. Applicazioni Web Statiche
-### 1.1 - Un primo esempio di Scraping
+Per prima cosa si crea l'ambiente virtuale; bisogna verificare prima che Python3 e pip3 siano correttamente installati:
+```bash
+C:\Users\luca>python --version
+Python 3.12.4
+
+C:\Users\luca>pip --version
+pip 24.2 
+```
+
+Quindi si <a href="https://docs.python.org/3/library/venv.html">crea</a> l'ambiente virtuale e lo si attiva:
+```bash
+python -m venv jupynote
+jupynote\Scripts\activate
+```
+
+Con la'mbiente virtuale attivo, si installa Jupyter Notebook e il kernel, in modo tale da poterlo <a href="https://medium.com/@kishanck/virtual-environments-for-jupyter-notebooks-847b7a3b4da0">utilizzare con un suo ambiente virtuale dedicato</a>:
+```bash
+pip install notebook ipykernel 
+```
+Si aggiunge manualmente il nostro virtual env come kernel alternativo per Jupyter Notebook, oltre a quello che utilizza di default:
+```bash
+python -m ipykernel install --user --name=jupynote
+```
+Il Notebook può essere lanciato tramite il comando:
+```bash
+jupyter notebook
+```
+Si aprirà una pagina web con cui dialogare con il Notebook che gira, di default, sulla porta 8888. Ora si può creare un nuovo notebook selezionando il kernel appena creato: ```kernel>change kernel```:
+![image](https://github.com/user-attachments/assets/74eec0d1-cc7d-4d26-b8d8-03ae5ec0b6dd)
+
+
+## 2. Applicazioni Web Statiche
+### 2.1 - Un primo esempio di Scraping
 Nella cartella  ```/scraper1 ``` è contenuto il primo esempio di scraper in Python. Il sito di riferimento è il seguente: https://books.toscrape.com/. In questo primo progetto si farà uso delle librerie <a href="https://www.python-httpx.org/">httpx</a> e <a href="https://github.com/rushter/selectolax">selectolax</a>; la prima è una alternativa alla classica libreria <a href="https://pypi.org/project/requests/">requests</a>, la seconda un'alternativa a <a href="https://pypi.org/project/beautifulsoup4/">beautifulsoup</a> per il parsing delle risposte HTML, ma permette unicamente di catturare i selettori CSS. Queste due scelte sono state utilizzate per garantire un approccio più moderno al web scraping.
 
-### 1.2 - Introduzione a Scrapy
+### 2.2 - Introduzione a Scrapy
 Un approccio migliore è quello di utilizzare <a href="https://docs.scrapy.org/en/latest/index.html">Scrapy</a>, un framework per lo scraping in Python. Si installa prima Scrapy:
 ```bash
 pip install scrapy
@@ -134,4 +169,14 @@ Un estratto del risultato è riportato di seguito:
 Web scraping YT: https://www.youtube.com/playlist?list=PLRzwgpycm-FiTz9bGQoITAzFEOJkbF6Qp
 
 
-### 1.3 
+### 2.3 Scrapy FCC
+
+
+## 3. Applicazioni Web Dinamiche
+### 3.1 Selenium
+In questa sezione si utilizzerà <a href="https://www.selenium.dev/documentation/">Selenium</a> come primo esempioi di scraping dinamico su <a href="https://www.threads.net/?hl=en">Threads</a>. In questa
+sezione  si farà uso di Jupyter Notebook per lo sviluppo. Si faccia riferimento ai capitoli precedenti per le impostazioni generali. all'interno dell'ambiente virtuale creato in precedenza si può <a href="https://pypi.org/project/selenium/">installre selenium</a>:
+```bash
+pip install selenium
+```
+Il file verrà caricato direttamente dall'interfaccia grafica di Github, senza passa per git. Ricordarsi di fare il ```pip freeze```.
