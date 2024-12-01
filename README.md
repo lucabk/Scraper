@@ -182,13 +182,14 @@ Web scraping YT: https://www.youtube.com/playlist?list=PLRzwgpycm-FiTz9bGQoITAzF
 ## 3. Applicazioni Web Dinamiche
 ### 3.1 Selenium: ```scraper3```
 In questa sezione si utilizzerà <a href="https://www.selenium.dev/documentation/">Selenium</a> come primo esempioi di scraping dinamico su <a href="https://www.threads.net/?hl=en">Threads</a>. In questa
-sezione  si farà uso di Jupyter Notebook per lo sviluppo. Si faccia riferimento ai capitoli precedenti per le impostazioni generali. all'interno dell'ambiente virtuale creato in precedenza si può <a href="https://pypi.org/project/selenium/">installre selenium</a>:
+sezione  si farà uso di Jupyter Notebook per lo sviluppo. Si faccia riferimento ai capitoli precedenti per le impostazioni generali. Chrome  installato è un prerequisito per per il corretto funzionamento di Selenium con il web driver. All'interno dell'ambiente virtuale creato in precedenza si può <a href="https://pypi.org/project/selenium/">installre selenium</a>:
 ```bash
 pip install selenium
 ```
 Il file verrà caricato direttamente dall'interfaccia grafica di Github, senza passa per git. Ricordarsi di fare il ```pip freeze > requirements.txt```.
 
-Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs.io/api.html">webdriver</a>, in modo tale da permettere il controllo del browser da parte del pacchetto Python Selenium:
+Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs.io/api.html">webdriver</a>, in modo tale da permettere il controllo del browser da parte dello stesso.
 ```bash
 pip install webdriver-manager
 ```
+La scelta di utilzzare Jupyter Notebook direttamente su Windows è stata fatta per osservare visivamente l'apertura di Chrome e avere una rappresentazione visiva di come si comporti lo scraper durante lo sviluppo; in modo tale da visualizzazione graficamente movimenti ed errori.
