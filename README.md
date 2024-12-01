@@ -187,7 +187,7 @@ sezione  si farà uso di Jupyter Notebook per lo sviluppo. Si faccia riferimento
 pip install selenium
 ```
 Il file verrà caricato direttamente dall'interfaccia grafica di Github, senza passa per git. I requisiti verranno salvati nel file convenzionalmente utilizzato per Python, tramite il comando: ```pip freeze > requirements.txt```. Una volta scaticato il progetto per installare i pacchetti si lancia: ```pip install -r requirements.txt``` all'interno del env dedicato, e poi il notebook.
-Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs.io/api.html">webdriver</a>, in modo tale da permettere il controllo del browser da parte dello stesso.
+Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs.io/api.html">webdriver</a>, in modo tale da permettere il controllo del browser da parte dello stesso. Le proprietà e i metodi associati al driver possono essere consultati nella <a href="https://www.selenium.dev/selenium/docs/api/py/webdriver_remote/selenium.webdriver.remote.webdriver.html">documentazione ufficiale</a>.
 ```bash
 pip install webdriver-manager
 ```
