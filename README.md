@@ -192,3 +192,14 @@ Inoltre, Selenium avrà bisogno del <a href="https://selenium-python.readthedocs
 pip install webdriver-manager
 ```
 La scelta di utilzzare Jupyter Notebook direttamente su Windows è stata fatta per osservare visivamente l'apertura di Chrome e avere una rappresentazione visiva di come si comporti lo scraper durante lo sviluppo; in modo tale da visualizzazione graficamente movimenti ed errori.
+
+Lo scraper scorre ed estrae di ogni singolo post:
+- username
+- username link
+- immagine del profilo dello username
+- link del post
+
+Si è scelto di salvare i dati estratti all'interno di un <a href="https://hub.docker.com/_/mysql">container mysql</a> e di utilizzare <a href="https://pypi.org/project/PyMySQL/">pymysql</a> per interfacciarsi con il db:
+```bash
+pip install PyMySQL
+```
